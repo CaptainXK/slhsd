@@ -1,0 +1,21 @@
+# Use an ubuntu as a parent image
+FROM ubuntu:latest
+
+RUN mkdir /usr/src/libev_server_test
+
+ADD test.app /usr/src/libev_server_test
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+WORKDIR /usr/src/libev_server_test
+
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./lib
+
+# RUN echo $LD_LIBRARY_PATH
+
+# Run app.py when the container launches
+CMD ["./test.app"]
+
+#docker run cmd
+# sudo docker run -v /usr/lib/x86_64-linux-gnu/:/usr/src/libev_server_test libev_server:v1

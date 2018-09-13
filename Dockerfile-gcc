@@ -1,0 +1,16 @@
+# Use an ubuntu as a parent image
+FROM gcc:latest
+
+RUN mkdir /usr/src/libev_server_test
+
+ADD . /usr/src/libev_server_test
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+WORKDIR /usr/src/libev_server_test
+
+RUN make
+
+# Run app.py when the container launches
+CMD ["./test.app"]

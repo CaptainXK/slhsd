@@ -15,7 +15,7 @@ sudo docker image build -f Dockerfile-gcc -t libev_server_simple:v1 .
 3. 
 sudo docker run libev_server_simple:v1
 
-If you want to deploy executable file in docker, sue commands as following:
+If you want to deploy executable file in docker, use commands as following:
 
 1.
 #pull a ubuntu imgae in docker
